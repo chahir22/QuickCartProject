@@ -5,6 +5,7 @@ import React from 'react'
 
 const Layout = ({ children }) => {
   return (
+    
     <div>
       <Navbar />
       <div className='flex w-full'>
@@ -12,6 +13,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
     </div>
+    
   )
 }
 
