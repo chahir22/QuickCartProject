@@ -39,27 +39,19 @@ const Navbar = () => {
 
       <ul className="hidden md:flex items-center gap-4 ">
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
-        {/* { user 
-        ? <>
-        <UserButton>
-          <UserButton.MenuItems>
-            <UserButton.Action label="Home" labelIcon={<HomeIcon />} onClick={()=> router.push('/')} />
-          </UserButton.MenuItems>
-          <UserButton.MenuItems>
-            <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={()=> router.push('/all-products')} />
-          </UserButton.MenuItems>
-          <UserButton.MenuItems>
-            <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={()=> router.push('/cart')} />
-          </UserButton.MenuItems>
-          <UserButton.MenuItems>
-            <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={()=> router.push('/my-orders')} />
-          </UserButton.MenuItems>
-        </UserButton>
-        </>   
-        : <button onClick={openSignIn} className="flex items-center gap-2 hover:text-gray-900 transition">
+        <div className="flex items-center gap-2">
           <Image src={assets.user_icon} alt="user icon" />
-          Account
-        </button>} */}
+          { user 
+            ? <UserButton>
+                <UserButton.MenuItems>
+                  <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={()=> router.push('/all-products')} />
+                  <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={()=> router.push('/cart')} />
+                  <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={()=> router.push('/my-orders')} />
+                </UserButton.MenuItems> 
+              </UserButton>
+            : <button onClick={openSignIn} className="hover:text-gray-900 transition">Account</button>
+          }
+        </div>
          {user 
         ? <>
         <UserButton>
